@@ -40,9 +40,7 @@ public class Jyanken_Chapter24 {
 		return cHands;
 	}
 
-	public void playGame() {
-		String player = getMyChoice();		// 自分名じゃんけん結果
-		String challenger = getRandom();	// 相手のじゃんけん結果
+	public void playGame(String getMyChoice, String getRandom) {
 		
 		HashMap<String, String> play = new HashMap<String, String>();	// HushMapを宣言
 		
@@ -51,14 +49,14 @@ public class Jyanken_Chapter24 {
 		play.put("p", "パー");
 		
 		// じゃんけんの結果を表示
-		System.out.println("自分の手は" + play.get(player) + "対戦相手の手は" + play.get(challenger));
+		System.out.println("自分の手は" + play.get(getMyChoice) + "対戦相手の手は" + play.get(getRandom));
 		
 		// あいこだった場合
-		if (player.equals("r") && challenger.equals("r") || player.equals("s") && challenger.equals("s") || player.equals("p") && challenger.equals("p")) {
+		if (getMyChoice.equals("r") && getRandom.equals("r") || getMyChoice.equals("s") && getRandom.equals("s") || getMyChoice.equals("p") && getRandom.equals("p")) {
 			System.out.println("あいこです");
 	
 		// 自分が勝ちの場合
-		}else if (player.equals("r") && challenger.equals("s") || player.equals("s") && challenger.equals("p") || player.equals("p") && challenger.equals("r")) {
+		}else if (getMyChoice.equals("r") && getRandom.equals("s") || getMyChoice.equals("s") && getRandom.equals("p") || getMyChoice.equals("p") && getRandom.equals("r")) {
 			System.out.println("自分の勝ちです");
 		
 		// それ以外（自分が負け）の場合
